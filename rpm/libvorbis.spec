@@ -43,6 +43,7 @@ Requires:  %{name} = %{version}-%{release}
 %autosetup -n %{name}-%{version}/upstream
 
 %build
+export CFLAGS="$RPM_OPT_FLAGS -fPIC"
 %reconfigure --enable-static --disable-shared
 %make_build
 
